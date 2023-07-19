@@ -6,7 +6,7 @@ namespace task_02
     {
         static void Main()
         {
-            string number = Console.ReadLine();
+            string? number = Console.ReadLine();
             Console.WriteLine("*****\n" + "*" + number + "*\n" + "*****");
         }
     }

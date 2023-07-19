@@ -1,0 +1,15 @@
+/Users/user/Documents/C_tasks/task-05/bin/Debug/net7.0/task-05
+/Users/user/Documents/C_tasks/task-05/bin/Debug/net7.0/task-05.deps.json
+/Users/user/Documents/C_tasks/task-05/bin/Debug/net7.0/task-05.runtimeconfig.json
+/Users/user/Documents/C_tasks/task-05/bin/Debug/net7.0/task-05.dll
+/Users/user/Documents/C_tasks/task-05/bin/Debug/net7.0/task-05.pdb
+/Users/user/Documents/C_tasks/task-05/obj/Debug/net7.0/task-05.csproj.AssemblyReference.cache
+/Users/user/Documents/C_tasks/task-05/obj/Debug/net7.0/task-05.GeneratedMSBuildEditorConfig.editorconfig
+/Users/user/Documents/C_tasks/task-05/obj/Debug/net7.0/task-05.AssemblyInfoInputs.cache
+/Users/user/Documents/C_tasks/task-05/obj/Debug/net7.0/task-05.AssemblyInfo.cs
+/Users/user/Documents/C_tasks/task-05/obj/Debug/net7.0/task-05.csproj.CoreCompileInputs.cache
+/Users/user/Documents/C_tasks/task-05/obj/Debug/net7.0/task-05.dll
+/Users/user/Documents/C_tasks/task-05/obj/Debug/net7.0/refint/task-05.dll
+/Users/user/Documents/C_tasks/task-05/obj/Debug/net7.0/task-05.pdb
+/Users/user/Documents/C_tasks/task-05/obj/Debug/net7.0/task-05.genruntimeconfig.cache
+/Users/user/Documents/C_tasks/task-05/obj/Debug/net7.0/ref/task-05.dll

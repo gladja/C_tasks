@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/user/Documents/C#/task-02/task-02.csproj": {}
+    "/Users/user/Documents/C_tasks/task-02/task-02.csproj": {}
   },
   "projects": {
-    "/Users/user/Documents/C#/task-02/task-02.csproj": {
+    "/Users/user/Documents/C_tasks/task-02/task-02.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/user/Documents/C#/task-02/task-02.csproj",
+        "projectUniqueName": "/Users/user/Documents/C_tasks/task-02/task-02.csproj",
         "projectName": "task-02",
-        "projectPath": "/Users/user/Documents/C#/task-02/task-02.csproj",
+        "projectPath": "/Users/user/Documents/C_tasks/task-02/task-02.csproj",
         "packagesPath": "/Users/user/.nuget/packages/",
-        "outputPath": "/Users/user/Documents/C#/task-02/obj/",
+        "outputPath": "/Users/user/Documents/C_tasks/task-02/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/user/.nuget/NuGet/NuGet.Config"

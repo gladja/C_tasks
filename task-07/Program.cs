@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace task_01
+namespace task_07
 {
     class Program
     {

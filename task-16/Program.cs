@@ -1,12 +1,13 @@
 ﻿using System;
 
-namespace task_14
+namespace task_15
 {
     class Program
     {
         static void Main()
         {
-            int sum = 5 * (12 * (123 * (1234 + 54321) + 4321) + 12) * 5;
+            double sum = (0.3 * (5 * 5) - 15) / (3.5 + (2 * 2));
+
             Console.WriteLine(sum);
         }
     }

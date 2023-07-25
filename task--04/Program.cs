@@ -13,7 +13,7 @@ namespace task_04
             int d = int.Parse(data[3]);
             int e = int.Parse(data[4]);
 
-            if ((a >= 1000) && (a <= 9999) && (a > 0) && (a % 2 != 0) && (a % 3 != 0) && (a % 5 != 0))
+            if (((a >= 1000) && (a <= 9999)) && (a > 0) && (a % 2 != 0) && (a % 3 != 0) && (a % 5 != 0))
             {
                 Console.WriteLine("NO");
             }

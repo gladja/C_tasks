@@ -4,14 +4,14 @@ namespace task_04
 {
     class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
-            string[] data = Console.ReadLine().Trim().Split();
-            int a = int.Parse(data[0]);
-            int b = int.Parse(data[1]);
-            int c = int.Parse(data[2]);
-            int d = int.Parse(data[3]);
-            int e = int.Parse(data[4]);
+            // string[] data = Console.ReadLine().Trim().Split();
+            int a = Convert.ToInt32(Console.ReadLine());
+            int b = Convert.ToInt32(Console.ReadLine());
+            int c = Convert.ToInt32(Console.ReadLine());
+            int d = Convert.ToInt32(Console.ReadLine());
+            int e = Convert.ToInt32(Console.ReadLine());
 
             if (((a >= 1000) && (a <= 9999)) && (a > 0) && (a % 2 != 0) && (a % 3 != 0) && (a % 5 != 0))
             {

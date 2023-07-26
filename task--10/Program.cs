@@ -1,42 +1,65 @@
 ﻿using System;
 
-namespace task_09
+namespace task_10
 {
     class Program
     {
         static void Main()
         {
-            string[] data = Console.ReadLine().Trim().Split();
-            int a = int.Parse(data[0]);
-            int b = int.Parse(data[1]);
-            int c = int.Parse(data[2]);
+            // string[] data = Console.ReadLine().Trim().Split();
+            int a = Convert.ToInt32(Console.ReadLine());
+            int b = Convert.ToInt32(Console.ReadLine());
+            int c = Convert.ToInt32(Console.ReadLine());
 
+            int max;
+            int min;
+
+            // 3 4 5 
             if (a > b)
             {
-                a = a + b;
-                b = a - b;
-                a = a - b;
+                max = a;
             }
-            if (b > c)
-            {
-                b = b + c;
-                c = b - c;
-                b = b - c;
-            }
-            if (a > b)
-            {
-                a = a + b;
-                b = a - b;
-                a = a - b;
-            }
-
-            a = a * a;
-            c = c * c;
-
-            if (a > c)
-                Console.WriteLine("{0}\n{1}", a, c);
             else
-                Console.WriteLine("{0}\n{1}", c, a);
+            {
+                max = b;
+            }
+
+            if (max < c)
+            {
+                max = c;
+            }
+
+            if (a < b)
+            {
+                min = a;
+            }
+            else
+            {
+                min = b;
+            }
+
+            if (min > c)
+            {
+                min = c;
+            }
+
+            // Console.WriteLine(max);
+            // Console.WriteLine(min);
+            // max = max * max;
+            // min = min * min;
+
+            if (max > min)
+            {
+                max = max * max;
+                min = min * min;
+                Console.WriteLine("{0}\n{1}", max, min);
+            }
+            else
+            {
+                max = max * max;
+                min = min * min;
+                Console.WriteLine("{0}\n{1}", min, max);
+            }
         }
     }
 }

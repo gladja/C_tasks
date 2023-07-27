@@ -1,0 +1,15 @@
+/Users/user/Documents/C#/C_tasks/task--14/bin/Debug/net7.0/task--14
+/Users/user/Documents/C#/C_tasks/task--14/bin/Debug/net7.0/task--14.deps.json
+/Users/user/Documents/C#/C_tasks/task--14/bin/Debug/net7.0/task--14.runtimeconfig.json
+/Users/user/Documents/C#/C_tasks/task--14/bin/Debug/net7.0/task--14.dll
+/Users/user/Documents/C#/C_tasks/task--14/bin/Debug/net7.0/task--14.pdb
+/Users/user/Documents/C#/C_tasks/task--14/obj/Debug/net7.0/task--14.csproj.AssemblyReference.cache
+/Users/user/Documents/C#/C_tasks/task--14/obj/Debug/net7.0/task--14.GeneratedMSBuildEditorConfig.editorconfig
+/Users/user/Documents/C#/C_tasks/task--14/obj/Debug/net7.0/task--14.AssemblyInfoInputs.cache
+/Users/user/Documents/C#/C_tasks/task--14/obj/Debug/net7.0/task--14.AssemblyInfo.cs
+/Users/user/Documents/C#/C_tasks/task--14/obj/Debug/net7.0/task--14.csproj.CoreCompileInputs.cache
+/Users/user/Documents/C#/C_tasks/task--14/obj/Debug/net7.0/task--14.dll
+/Users/user/Documents/C#/C_tasks/task--14/obj/Debug/net7.0/refint/task--14.dll
+/Users/user/Documents/C#/C_tasks/task--14/obj/Debug/net7.0/task--14.pdb
+/Users/user/Documents/C#/C_tasks/task--14/obj/Debug/net7.0/task--14.genruntimeconfig.cache
+/Users/user/Documents/C#/C_tasks/task--14/obj/Debug/net7.0/ref/task--14.dll

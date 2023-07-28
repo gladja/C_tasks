@@ -1,0 +1,15 @@
+/Users/gladja/Documents/C#/C_tasks/task--07/obj/Debug/net7.0/task--07.csproj.AssemblyReference.cache
+/Users/gladja/Documents/C#/C_tasks/task--07/obj/Debug/net7.0/task--07.GeneratedMSBuildEditorConfig.editorconfig
+/Users/gladja/Documents/C#/C_tasks/task--07/obj/Debug/net7.0/task--07.AssemblyInfoInputs.cache
+/Users/gladja/Documents/C#/C_tasks/task--07/obj/Debug/net7.0/task--07.AssemblyInfo.cs
+/Users/gladja/Documents/C#/C_tasks/task--07/obj/Debug/net7.0/task--07.csproj.CoreCompileInputs.cache
+/Users/gladja/Documents/C#/C_tasks/task--07/bin/Debug/net7.0/task--07
+/Users/gladja/Documents/C#/C_tasks/task--07/bin/Debug/net7.0/task--07.deps.json
+/Users/gladja/Documents/C#/C_tasks/task--07/bin/Debug/net7.0/task--07.runtimeconfig.json
+/Users/gladja/Documents/C#/C_tasks/task--07/bin/Debug/net7.0/task--07.dll
+/Users/gladja/Documents/C#/C_tasks/task--07/bin/Debug/net7.0/task--07.pdb
+/Users/gladja/Documents/C#/C_tasks/task--07/obj/Debug/net7.0/task--07.dll
+/Users/gladja/Documents/C#/C_tasks/task--07/obj/Debug/net7.0/refint/task--07.dll
+/Users/gladja/Documents/C#/C_tasks/task--07/obj/Debug/net7.0/task--07.pdb
+/Users/gladja/Documents/C#/C_tasks/task--07/obj/Debug/net7.0/task--07.genruntimeconfig.cache
+/Users/gladja/Documents/C#/C_tasks/task--07/obj/Debug/net7.0/ref/task--07.dll

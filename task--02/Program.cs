@@ -8,6 +8,19 @@ namespace task_02
         {
             string white = "";
             string black = "";
+            string white1 = "";
+            string black1 = "";
+            string white2 = "";
+            string black2 = "";
+            string white3 = "";
+            string black3 = "";
+            string white4 = "";
+            string black4 = "";
+            string white5 = "";
+            string black5 = "";
+            string white6 = "";
+            string black6 = "";
+
 
             string[] data = Console.ReadLine().Trim().Split();
             int a = int.Parse(data[0]);
@@ -37,58 +50,60 @@ namespace task_02
 
             if ((a + b) % 2 == 0)
             {
-                black = Convert.ToString(a) + " " + Convert.ToString(b);
+                black1 = Convert.ToString(a) + " " + Convert.ToString(b) + " ";
             }
             else
             {
-                white = Convert.ToString(a) + " " + Convert.ToString(b);
+                white1 = Convert.ToString(a) + " " + Convert.ToString(b) + " ";
             }
 
             if ((c + d) % 2 == 0)
             {
-                black = Convert.ToString(c) + " " + Convert.ToString(d);
+                black2 = Convert.ToString(c) + " " + Convert.ToString(d) + " ";
             }
             else
             {
-                white = Convert.ToString(c) + " " + Convert.ToString(d);
+                white2 = Convert.ToString(c) + " " + Convert.ToString(d) + " ";
             }
 
             if ((e + f) % 2 == 0)
             {
-                black = Convert.ToString(e) + " " + Convert.ToString(f);
+                black3 = Convert.ToString(e) + " " + Convert.ToString(f) + " ";
             }
             else
             {
-                white = Convert.ToString(e) + " " + Convert.ToString(f);
+                white3 = Convert.ToString(e) + " " + Convert.ToString(f) + " ";
             }
 
             if ((g + h) % 2 == 0)
             {
-                black = Convert.ToString(g) + " " + Convert.ToString(h);
+                black4 = Convert.ToString(g) + " " + Convert.ToString(h) + " ";
             }
             else
             {
-                white = Convert.ToString(g) + " " + Convert.ToString(h);
+                white4 = Convert.ToString(g) + " " + Convert.ToString(h) + " ";
             }
 
             if ((i + j) % 2 == 0)
             {
-                black = Convert.ToString(i) + " " + Convert.ToString(j);
+                black5 = Convert.ToString(i) + " " + Convert.ToString(j) + " ";
             }
             else
             {
-                white = Convert.ToString(i) + " " + Convert.ToString(j);
+                white5 = Convert.ToString(i) + " " + Convert.ToString(j) + " ";
             }
 
             if ((k + l) % 2 == 0)
             {
-                black = Convert.ToString(k) + " " + Convert.ToString(l);
+                black6 = Convert.ToString(k) + " " + Convert.ToString(l) + " ";
             }
             else
             {
-                white = Convert.ToString(k) + " " + Convert.ToString(l);
+                white6 = Convert.ToString(k) + " " + Convert.ToString(l) + " ";
             }
 
+            white = white1 + white2 + white3 + white4 + white5 + white6;
+            black = black1 + black2 + black3 + black4 + black5 + black6;
 
             Console.WriteLine(white);
             Console.WriteLine(black);

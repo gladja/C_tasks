@@ -37,11 +37,11 @@ namespace task_02
 
             if ((a + b) % 2 == 0)
             {
-                black = Convert.ToString(a);
+                black = Convert.ToString(a) + " " + Convert.ToString(b);
             }
             else
             {
-                white = Convert.ToString(a);
+                white = Convert.ToString(a) + " " + Convert.ToString(b);
             }
 
             if ((c + d) % 2 == 0)

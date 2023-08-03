@@ -8,14 +8,16 @@ namespace task_01
         {
             int num = Convert.ToInt32(Console.ReadLine());
             int count = 0;
+            int sum = num;
 
             while (num > 0 || num < 0)
             {
-                if (num % 2 != 0)
+                num = Convert.ToInt32(Console.ReadLine());
+                if (sum < num)
                 {
                     count += 1;
                 }
-                num = Convert.ToInt32(Console.ReadLine());
+                sum = num;
             }
             Console.WriteLine(count);
         }

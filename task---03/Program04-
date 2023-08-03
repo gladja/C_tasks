@@ -1,0 +1,33 @@
+﻿using System;
+
+namespace task_01
+{
+    class Program
+    {
+        static void Main()
+        {
+            string[] data = Console.ReadLine().Trim().Split();
+            uint n = uint.Parse(data[0]);
+            uint p = uint.Parse(data[1]);
+            uint m = uint.Parse(data[2]);
+
+            int count = 0;
+            double proc = n;
+            // double proc = (n * p / 100.0) + n;
+
+            while (proc <= m)
+            {
+                double sum = Math.Floor(proc * p) / 100;
+                proc += sum;
+                count += 1;
+                // Console.WriteLine(sum);
+
+            }
+            Console.WriteLine(count);
+        }
+    }
+}
+
+
+
+

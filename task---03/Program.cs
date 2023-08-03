@@ -7,15 +7,21 @@ namespace task_01
         static void Main()
         {
             int num = Convert.ToInt32(Console.ReadLine());
-            int sum = num;
+            double sum = num;
+            int count = 0;
 
             while (num > 0 || num < 0)
             {
+                count += 1;
                 num = Convert.ToInt32(Console.ReadLine());
                 sum += num;
             }
-            Console.WriteLine(sum);
 
+            if (num == 0)
+            {
+                sum /= count;
+            }
+            Console.WriteLine(sum);
         }
     }
 }

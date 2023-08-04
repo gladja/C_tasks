@@ -6,23 +6,28 @@ namespace task_01
     {
         static void Main()
         {
+
             int num = Convert.ToInt32(Console.ReadLine());
-            int n = 2;
+            int n = 0;
+            int a = 0;
+            int count = 0;
 
-            for (int i = 2; num % n != 0 && n <= Math.Sqrt(num); i++)
+            for (int i = 0, j = 0; i < num || num < j; i++, j--)
             {
-                n = i;
+                n = num % 10;
+                num /= 10;
+                // Console.WriteLine(n);
+                if (n % 2 != 0)
+                {
+                    count++;
+                }
             }
-
-            if (num % n == 0)
+            // Console.WriteLine(num);
+            if (num % 2 != 0)
             {
-                Console.WriteLine(n);
+                count++;
             }
-            else
-            {
-                Console.WriteLine(num);
-            }
-
+            Console.WriteLine(count);
         }
     }
 }

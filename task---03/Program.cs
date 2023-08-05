@@ -6,33 +6,49 @@ namespace task_01
     {
         static void Main()
         {
-            string[] data = Console.ReadLine().Trim().Split();
-            int a = int.Parse(data[0]);
-            double b = double.Parse(data[1]);
-            int c = a;
-            double d = b;
+            double x = double.Parse(Console.ReadLine()) / 10;
+            double y = x;
+            double a = Math.Floor(x);
 
-            for (int i = 1; i <= 10; i++)
+            Console.WriteLine(x);
+            Console.WriteLine(a);
+            Console.WriteLine(x - a);
+
+            for (int i = 1; i <= 15; i++)
             {
-                a *= i;
-                b *= i / 100.0;
-                double x = a + b;
+                x *= i;
+
                 if (i < 10)
                 {
-                    Console.WriteLine($" {i} kg: {x.ToString("0.00").Replace(".", ",")} UAH");
+                    if (x - a < 0.1)
+                    {
+                        Console.WriteLine($" {i * 100} grams: {x.ToString("0.00").Replace(".0", " UAH ")} kop");
+
+                    }
+                    else
+                    {
+                        Console.WriteLine($" {i * 100} grams: {x.ToString("0.00").Replace(".", " UAH ")} kop");
+                    }
                 }
                 else
                 {
-                    Console.WriteLine($"{i} kg: {x.ToString("0.00").Replace(".", ",")} UAH");
+                    if (x - a < 0.1)
+                    {
+                        Console.WriteLine($"{i * 100} grams: {x.ToString("0.00").Replace(".0", " UAH ")} kop");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"{i * 100} grams: {x.ToString("0.00").Replace(".", " UAH ")} kop");
+                    }
                 }
 
-                a = c;
-                b = d;
+                x = y;
             }
         }
     }
 }
 
+// https://learn.microsoft.com/ru-ru/dotnet/standard/base-types/custom-numeric-format-strings#the-0-custom-specifier
 // Console.WriteLine(x.ToString("0.00").Replace(".", ","));
 // Console.WriteLine(String.Format(CultureInfo.InvariantCulture, "{0:0.00}", x));
 // Console.WriteLine(String.Format("{0:00000}", x));

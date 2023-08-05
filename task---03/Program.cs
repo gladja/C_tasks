@@ -10,17 +10,18 @@ namespace task_01
             double y = x;
             double a = Math.Floor(x);
 
-            Console.WriteLine(x);
-            Console.WriteLine(a);
-            Console.WriteLine(x - a);
+            // Console.WriteLine(x);
+            // Console.WriteLine(a);
+            // Console.WriteLine(x - a);
 
             for (int i = 1; i <= 15; i++)
             {
                 x *= i;
+                a *= i;
 
                 if (i < 10)
                 {
-                    if (x - a < 0.1)
+                    if (x - a < 0.09)
                     {
                         Console.WriteLine($" {i * 100} grams: {x.ToString("0.00").Replace(".0", " UAH ")} kop");
 
@@ -32,7 +33,7 @@ namespace task_01
                 }
                 else
                 {
-                    if (x - a < 0.1)
+                    if (x - a < 0.09)
                     {
                         Console.WriteLine($"{i * 100} grams: {x.ToString("0.00").Replace(".0", " UAH ")} kop");
                     }
@@ -43,6 +44,7 @@ namespace task_01
                 }
 
                 x = y;
+                a = Math.Floor(y);
             }
         }
     }

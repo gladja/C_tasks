@@ -6,22 +6,50 @@ namespace task_01
     {
         static void Main()
         {
+            string[] data = Console.ReadLine().Trim().Split();
+            int a = int.Parse(data[0]);
+            int b = int.Parse(data[1]);
+            int count = 0;
+            int count2 = 0;
+            int a2 = a;
+            int b2 = b;
 
-            long num = long.Parse(Console.ReadLine());
-            long res = 0;
-
-            while (num != 0)
+            if (a < b)
             {
-                res *= 10;
-                // Console.WriteLine(res);
-                res += num % 10;
-                // Console.WriteLine(res);
-                num /= 10;
-                // Console.WriteLine(num);
+                while (a <= b)
+                {
+                    a++;
+                    count++;
+                }
+                Console.WriteLine($"{count} very important numbers:");
+                Console.WriteLine(a2);
+
+                while (a2 < b2)
+                {
+                    a2++;
+                    Console.WriteLine(a2);
+                }
 
             }
-            Console.WriteLine(res);
+            else
+            {
+
+                while (a >= b)
+                {
+                    a--;
+                    count++;
+                }
+                Console.WriteLine($"{count} very important numbers:");
+                Console.WriteLine(a2);
+
+                while (a2 > b2)
+                {
+                    a2--;
+                    Console.WriteLine(a2);
+                }
+
+            }
+
         }
     }
 }
-

@@ -6,28 +6,66 @@ namespace task_01
     {
         static void Main()
         {
-            string[] data = Console.ReadLine().Trim().Split();
-            int a = int.Parse(data[0]);
-            int b = int.Parse(data[1]);
-            double sum = 0;
-            int count = 0;
+            int num = Convert.ToInt32(Console.ReadLine());
+            int max = num;
+            int min = 0;
+            // int min2 = num;
 
-            for (int i = 1; sum < b; i++)
+
+            while (num != 0)
             {
-                sum = Math.Pow(i, 2);
-                if (sum >= a && sum <= b)
+                num = Convert.ToInt32(Console.ReadLine());
+                if (num == 0)
                 {
-                    Console.Write($"{sum} ");
-                    count++;
+                    break;
                 }
+
+                if (num > max)
+                {
+                    max = num;
+                }
+                else
+                {
+                    min = num;
+                }
+
+                if (num > min)
+                {
+                    min = num;
+                }
+
+
+
+
+                // if (min == 0)
+                // {
+                //     min = max;
+                // }
+
+
             }
-            if (count == 0)
-            {
-                Console.WriteLine("-1");
-            }
+            Console.WriteLine(min);
+
         }
     }
 }
+
+
+
+
+
+// if (num < max)
+// {
+//     min = num;
+// }
+// if (min < num)
+// {
+//     min = num;
+// }
+// if (min == 0)
+// {
+//     min = max;
+// }
 
 
 

@@ -6,29 +6,38 @@ namespace task_01
     {
         static void Main()
         {
-            int n = int.Parse(Console.ReadLine());
-            int res = 0;
-            int num = n;
-            int count = 0;
-            string str = "";
+            int num = Convert.ToInt32(Console.ReadLine());
+            int max = num;
+            int max2 = num;
 
-            if (n < 0)
-            {
-                count++;
-            }
 
-            while (n != 0)
+            while (num != 0)
             {
-                res = n % 10;
-                n /= 10;
-                count++;
+                num = Convert.ToInt32(Console.ReadLine());
+                if (num == 0)
+                {
+                    break;
+                }
+                // else
+                // {
+                if (num > max)
+                {
+                    max = num;
+                }
+                // }
             }
+            Console.WriteLine(max);
 
-            for (int i = 0; i < count; i++)
-            {
-                str += "*";
-            }
-            Console.WriteLine($"*{str}*\n*{num}*\n*{str}*");
         }
     }
 }
+
+
+
+
+
+
+
+
+
+

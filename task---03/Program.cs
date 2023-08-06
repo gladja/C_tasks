@@ -12,14 +12,14 @@ namespace task_01
 
             while (sum % k == 0 && sum < 10000)
             {
-                sum += k;
 
+                sum += k;
                 if (sum < 10000 && sum > 999)
                 {
                     sum2 += sum;
-                    // Console.WriteLine(sum);
+                    Console.WriteLine(sum);
                 }
-                Console.WriteLine(sum);
+                // Console.WriteLine(sum);
             }
             Console.WriteLine(sum2);
         }

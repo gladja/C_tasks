@@ -8,17 +8,21 @@ namespace task_01
         {
             int k = int.Parse(Console.ReadLine());
             int sum = k;
-            int sum2 = k;
+            int sum2 = 0;
 
-            if (sum < 10000)
+            while (sum % k == 0 && sum < 10000)
             {
-                while (sum % k == 0 && sum < 10000)
+                sum += k;
+                if (sum < 10000 && sum >= 999)
                 {
-                    sum += k;
-
                     sum2 += sum;
                     Console.WriteLine(sum);
                 }
+                // Console.WriteLine(sum);
+            }
+            if (k > 999)
+            {
+                sum2 += k;
             }
             Console.WriteLine(sum2);
         }

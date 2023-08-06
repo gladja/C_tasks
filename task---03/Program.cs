@@ -6,19 +6,18 @@ namespace task_01
     {
         static void Main()
         {
+            string[] data = Console.ReadLine().Trim().Split();
+            double n = double.Parse(data[0]);
+            double x = double.Parse(data[1]);
+            double sum = n;
+            int count = 1;
 
-            double n = double.Parse(Console.ReadLine());
-            double sum = 0;
-
-            for (int i = 0; n >= sum; i++)
+            for (int i = 0; sum < x; i++)
             {
-                sum = Math.Pow(2, i);
-                if (sum > n)
-                {
-                    break;
-                }
-                Console.Write($"{sum} ");
+                sum += sum * 0.1;
+                count++;
             }
+            Console.WriteLine(count);
         }
     }
 }

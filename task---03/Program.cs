@@ -6,38 +6,22 @@ namespace task_01
     {
         static void Main()
         {
-            int num = Convert.ToInt32(Console.ReadLine());
-            int max = num;
-            int max2 = num;
+            int k = int.Parse(Console.ReadLine());
+            int sum = k;
+            int sum2 = k;
 
-
-            while (num != 0)
+            while (sum % k == 0 && sum < 10000)
             {
-                num = Convert.ToInt32(Console.ReadLine());
-                if (num == 0)
-                {
-                    break;
-                }
-                // else
-                // {
-                if (num > max)
-                {
-                    max = num;
-                }
-                // }
-            }
-            Console.WriteLine(max);
+                sum += k;
 
+                if (sum < 10000 && sum > 999)
+                {
+                    sum2 += sum;
+                    // Console.WriteLine(sum);
+                }
+                Console.WriteLine(sum);
+            }
+            Console.WriteLine(sum2);
         }
     }
 }
-
-
-
-
-
-
-
-
-
-

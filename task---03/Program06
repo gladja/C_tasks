@@ -11,19 +11,20 @@ namespace task_01
             int count2 = 0;
             double sum = 1;
             double sum2 = 1;
+            double w = 1E-6;
 
 
-            for (int i = 2; sum <= num; i++)
+            for (int i = 2; sum <= num + w; i++)
             {
                 sum += 1.0 / i;
-                double a = 1.0 / i;
+                // double a = 1.0 / i;
                 count++;
                 // Console.WriteLine(i);
                 // Console.WriteLine(a);
                 // Console.WriteLine(sum);
             }
 
-            for (int i = 2; sum2 < num; i++)
+            for (int i = 2; sum2 < num - w; i++)
             {
                 sum2 += 1.0 / i;
                 count2++;

@@ -6,44 +6,32 @@ namespace task_01
     {
         static void Main()
         {
+            string[] x = Console.ReadLine().Split('.');
+            int uah = int.Parse(x[0]);
+            int kop = int.Parse(x[1]);
 
-            int num = int.Parse(Console.ReadLine());
-            int max = num;
-            int min = 0;
-            int count = 0;
+            int sum = ((uah * 100) + (kop * 10)) / 10;
+            int UAH, KOP, SUM;
 
-            while (num != 0)
+            for (int i = 1; i <= 15; i++)
             {
-                num = Convert.ToInt32(Console.ReadLine());
-                if (num == 0)
+                if (i < 10)
                 {
-                    break;
+                    SUM = sum * i;
+                    UAH = SUM / 100;
+                    KOP = SUM - (UAH * 100);
+                    Console.WriteLine($" {i * 100} grams: {UAH} UAH {KOP} kop");
+                }
+                else
+                {
+                    SUM = sum * i;
+                    UAH = SUM / 100;
+                    KOP = SUM - (UAH * 100);
+                    Console.WriteLine($"{i * 100} grams: {UAH} UAH {KOP} kop");
                 }
 
-                if (num >= max)
-                {
-                    max = num;
-                    min = num;
-                    count = 0;
-                }
-
-                if (count == 0 && num < max)
-                {
-                    min = num;
-                    count++;
-                }
-
-                if (count > 0 && num > min)
-                {
-                    min = num;
-                }
             }
-            // Console.WriteLine($"count:{count}");
-            // Console.WriteLine(max);
-            Console.WriteLine(min);
         }
     }
 }
-
-
 

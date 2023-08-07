@@ -15,7 +15,7 @@ namespace task_01
             double proc = n;
             // double proc = (n * p / 100.0) + n;
 
-            while (proc <= m)
+            while (proc < m)
             {
                 double sum = Math.Floor(proc * p) / 100;
                 proc += sum;

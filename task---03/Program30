@@ -8,35 +8,49 @@ namespace task_01
         {
 
             int num = int.Parse(Console.ReadLine());
-            int max = num;
-            int min = 0;
+            int max = int.MinValue;
+            int min = int.MinValue;
             int count = 0;
 
             while (num != 0)
             {
-                num = Convert.ToInt32(Console.ReadLine());
                 if (num == 0)
                 {
                     break;
                 }
 
-                if (num >= max)
+                if (num > max && num > min)
                 {
+                    min = max;
                     max = num;
-                    min = num;
                     count = 0;
                 }
-
-                if (count == 0 && num < max)
+                else
                 {
-                    min = num;
-                    count++;
+                    if (num == int.MinValue)
+                    {
+                        min = num;
+                    }
+                    else
+                    {
+                        if (num > min)
+                        {
+                            min = num;
+                        }
+                    }
                 }
 
-                if (count > 0 && num > min)
-                {
-                    min = num;
-                }
+                // if (num < max)
+                // {
+                //     min = num;
+                //     // count++;
+                // }
+
+                // if (num > min)
+                // {
+                //     min = num;
+                // }
+                num = Convert.ToInt32(Console.ReadLine());
             }
             // Console.WriteLine($"count:{count}");
             // Console.WriteLine(max);

@@ -6,32 +6,58 @@ namespace task_01
     {
         static void Main()
         {
-            string[] x = Console.ReadLine().Split('.');
-            int uah = int.Parse(x[0]);
-            int kop = int.Parse(x[1]);
 
-            int sum = ((uah * 100) + (kop * 10)) / 10;
-            int UAH, KOP, SUM;
+            int num = int.Parse(Console.ReadLine());
+            int max = int.MinValue;
+            int min = int.MinValue;
+            int count = 0;
 
-            for (int i = 1; i <= 15; i++)
+            while (num != 0)
             {
-                if (i < 10)
+                if (num == 0)
                 {
-                    SUM = sum * i;
-                    UAH = SUM / 100;
-                    KOP = SUM - (UAH * 100);
-                    Console.WriteLine($" {i * 100} grams: {UAH} UAH {KOP} kop");
+                    break;
+                }
+
+                if (num > max && num > min)
+                {
+                    min = max;
+                    max = num;
+                    count = 0;
                 }
                 else
                 {
-                    SUM = sum * i;
-                    UAH = SUM / 100;
-                    KOP = SUM - (UAH * 100);
-                    Console.WriteLine($"{i * 100} grams: {UAH} UAH {KOP} kop");
+                    if (num == int.MinValue)
+                    {
+                        min = num;
+                    }
+                    else
+                    {
+                        if (num > min)
+                        {
+                            min = num;
+                        }
+                    }
                 }
 
+                // if (num < max)
+                // {
+                //     min = num;
+                //     // count++;
+                // }
+
+                // if (num > min)
+                // {
+                //     min = num;
+                // }
+                num = Convert.ToInt32(Console.ReadLine());
             }
+            // Console.WriteLine($"count:{count}");
+            // Console.WriteLine(max);
+            Console.WriteLine(min);
         }
     }
 }
+
+
 

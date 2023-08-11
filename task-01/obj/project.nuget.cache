@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LwjYvHFy+hLbEeeaRydcVyYJDwFsC1dVwD3ZJv+oSAPNQErGeWzHgVTsmgcMj2B6InQWOooH1nLCfssSnEyYyg==",
+  "dgSpecHash": "q63078mn2nR/6XYrPhvlmx5nYmVCFGvW2x1YIwyi9P8ZtK+2Oz6LmczlHfbG+XWMc/zJJY2TKW6VuIIdyGXqcw==",
   "success": true,
-  "projectFilePath": "/Users/user/Documents/C#/task-01/task-01.csproj",
+  "projectFilePath": "/Users/user/Documents/C#/C_tasks/task-01/task-01.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

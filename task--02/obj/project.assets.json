@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/user/Documents/C#/C_tasks/task--01/task--01.csproj",
+      "projectUniqueName": "/Users/user/Documents/C#/C_tasks/task--02/task--01.csproj",
       "projectName": "task--01",
-      "projectPath": "/Users/user/Documents/C#/C_tasks/task--01/task--01.csproj",
+      "projectPath": "/Users/user/Documents/C#/C_tasks/task--02/task--01.csproj",
       "packagesPath": "/Users/user/.nuget/packages/",
-      "outputPath": "/Users/user/Documents/C#/C_tasks/task--01/obj/",
+      "outputPath": "/Users/user/Documents/C#/C_tasks/task--02/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/user/.nuget/NuGet/NuGet.Config"

@@ -16,18 +16,28 @@ namespace Hello
             return arr;
         }
 
+        public static bool IsPrime(int number)
+        {
+            for (int i = 2; i < number; i++)
+            {
+                if (number % i == 0)
+                    return false;
+            }
+            return true;
+        }
+
         static void CountOfDifferent(int[] arr)
         {
             double max = 0;
             double count = 0;
             double value = 0;
-            int count2 = 2;
 
             for (int i = 0; i < arr.Length; i++)
             {
-                count2++;
-                if (arr[i] % count2 != 0 && Math.Abs(arr[i]) != 1 || Math.Abs(arr[i]) == 2)
+
+                if (IsPrime(Math.Abs(arr[i])) && Math.Abs(arr[i]) != 1 && arr[i] != 0)
                 {
+                    // Console.WriteLine(arr[i]);
                     value += arr[i];
                     count++;
                     max = value / count;

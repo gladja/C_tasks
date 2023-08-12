@@ -16,50 +16,48 @@ namespace Hello
             return arr;
         }
 
-        static void CountOfDifferent(int[] arr, int f, int k)
+        static void CountOfDifferent(int[] arr)
         {
+            int max = 0;
+            int firstMax = 0;
+            int value = 0;
+
+
             int count = 0;
-            if (f > k)
+            for (int i = 0; i < arr.Length; i++)
             {
-                Console.WriteLine("Error");
-                return;
-            }
+                string res = arr[i].ToString();
+                for (int j = 0; j < res.Length; j++)
+                {
+                    int b = int.Parse($"{res[j]}");
+                    value += b;
+                }
+                if (value >= max)
+                {
+                    max = value;
+                    firstMax = arr[i];
+                    if (firstMax < arr[i])
+                    {
+                        count = i;
+                    }
+                }
 
-            for (int i = f; i < k; i++)
-            {
-                count++;
+                value = 0;
             }
-            if (count < 10)
-            {
-                Console.WriteLine(arr[count]);
-            }
-            else
-            {
-                Console.WriteLine("Error");
-            }
-
-            // if (f >= 0 && f < arr.Length && k >= 0 && k < arr.Length)
-            // {
-            //     for (int i = f; i <= k; i++)
-            //     {
-            //         Console.WriteLine($"{arr[i]}");
-            //     }
-            // }
-            // else
-            // {
-            //     Console.WriteLine("Error");
-            // }
+            Console.WriteLine(arr[count]);
+            // Console.WriteLine(min);
+            // Console.WriteLine(max);
+            // return max;
         }
+
 
         static void Main(string[] args)
 
         {
+            int n = Convert.ToInt16(Console.ReadLine());
             int[] myArr = InitByKeyBoard(Console.ReadLine());
-            string[] data = Console.ReadLine().Trim().Split();
-            int f = int.Parse(data[0]);
-            int k = int.Parse(data[1]);
 
-            CountOfDifferent(myArr, f, k);
+            CountOfDifferent(myArr);
         }
     }
 }

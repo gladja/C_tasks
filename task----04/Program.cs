@@ -19,7 +19,7 @@ namespace Hello
         static void CountOfDifferent(int[] arr)
         {
             int max = 0;
-            int firstMax = 0;
+            int firstMax = arr[0]; ;
             int value = 0;
 
 
@@ -35,9 +35,10 @@ namespace Hello
                 if (value >= max)
                 {
                     max = value;
-                    firstMax = arr[i];
+                    // Console.WriteLine(max);
                     if (firstMax < arr[i])
                     {
+                        firstMax = arr[i];
                         count = i;
                     }
                 }

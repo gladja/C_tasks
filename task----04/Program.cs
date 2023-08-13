@@ -5,29 +5,34 @@ namespace Hello
     class Program
     {
 
-        static long[] InitByKeyBoard(int x)
+        static int[] InitByKeyBoard(int k, int n, string[] data)
         {
             // long sum = 0;
-            long[] arr = new long[21];
-            arr[1] = (long)x;
+            // arr[1] = (long)x;
 
-            for (int i = 1; i <= 20; i++)
+            int[] arr = new int[n];
+            for (int i = 0; i < k; i++)
             {
-                arr[i] = arr[i - 1] * (i - 10) + x;
+                // string[] date = str.Trim().Split();
+                for (int j = 0; i < arr.Length; j++)
+                {
+                    arr[j] = Int32.Parse(data[j]);
+                }
+                return arr;
             }
             return arr;
         }
 
-        static void Sum(long[] arr, int p, int q, int r)
+        static void Sum(int[] arr)
         {
-            long sum = 0;
+            // long sum = 0;
 
             for (int i = 0; i < arr.Length; i++)
             {
-                // Console.Write($"{arr[i]} ");
+                Console.Write($"{arr[i]} ");
             }
-            sum = arr[p] + arr[q] + arr[r];
-            Console.WriteLine($"{sum}");
+            // sum = arr[p] + arr[q] + arr[r];
+            // Console.WriteLine($"{sum}");
         }
 
 
@@ -37,13 +42,14 @@ namespace Hello
         static void Main(string[] args)
 
         {
-            int x = Convert.ToInt16(Console.ReadLine());
+            int k = Convert.ToInt16(Console.ReadLine());
+            int n = Convert.ToInt16(Console.ReadLine());
             string[] data = Console.ReadLine().Trim().Split();
-            int p = int.Parse(data[0]);
-            int q = int.Parse(data[1]);
-            int r = int.Parse(data[2]);
+            // int p = int.Parse(data[0]);
+            // int q = int.Parse(data[1]);
+            // int r = int.Parse(data[2]);
 
-            Sum(InitByKeyBoard(x), p, q, r);
+            Sum(InitByKeyBoard(k, n, data));
         }
     }
 }

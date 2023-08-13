@@ -21,9 +21,8 @@ namespace Hello
             int min = int.MaxValue;
             int firstMin = arr[0]; ;
             int value = 0;
-
-
             int count = 0;
+
             for (int i = 0; i < arr.Length; i++)
             {
                 string res = Math.Abs(arr[i]).ToString();
@@ -32,7 +31,12 @@ namespace Hello
                     int b = int.Parse($"{res[j]}");
                     value += b;
                 }
-                if (value <= min)
+                if (value < min)
+                {
+                    min = value;
+                    count = i;
+                }
+                if (value == min)
                 {
                     min = value;
                     // Console.WriteLine(min);
@@ -66,7 +70,12 @@ namespace Hello
                     int b = int.Parse($"{res[j]}");
                     value += b;
                 }
-                if (value >= max)
+                if (value > max)
+                {
+                    max = value;
+                    count = i;
+                }
+                if (value == max)
                 {
                     max = value;
                     if (firstMax < arr[i])

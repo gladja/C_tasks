@@ -1,0 +1,47 @@
+﻿using System;
+
+namespace Hello
+{
+    class Program
+    {
+
+        static int[] InitByKeyBoard(string str)
+        {
+            string[] date = str.Trim().Split();
+            int[] arr = new int[date.Length];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = Int32.Parse(date[i]);
+            }
+            return arr;
+        }
+
+        static void CountOfDifferent(int[] arr)
+        {
+            int max = int.MinValue;
+            int min = arr[0];
+            int count = 0;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (min > arr[i])
+                {
+                    max = arr[i];
+                }
+            }
+        }
+
+
+
+        static void Main(string[] args)
+        {
+            int n = Convert.ToInt16(Console.ReadLine());
+            int[] myArr = InitByKeyBoard(Console.ReadLine());
+            // Created(CountOfDifferent(myArr));
+            // Console.Write(FindMinTwo(CountOfDifferent(myArr), ref minTwo));
+            CountOfDifferent(myArr);
+
+
+        }
+    }
+}

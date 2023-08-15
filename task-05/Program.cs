@@ -21,18 +21,10 @@ namespace Hello
 
             for (int i = 0; i < arr.Length - 1; i++)
             {
-
                 for (int j = 0; j < arr.Length - i - 1; j++)
                 {
                     // Console.WriteLine($"i:{arr[i]} j:{arr[j]}");
                     if (arr[j + 1] < arr[j])
-                    {
-                        int t = arr[j + 1];
-                        arr[j + 1] = arr[j];
-                        arr[j] = t;
-                    }
-
-                    if (arr[j + 1] > arr[j] && arr[j] > 0)
                     {
                         int t = arr[j + 1];
                         arr[j + 1] = arr[j];
@@ -43,23 +35,38 @@ namespace Hello
             return arr;
         }
 
-        static void Created(int[] arr)
+        static void Created(int[] arr, int[] arrCopy)
         {
+            int value = 0;
             for (int i = 0; i < arr.Length; i++)
             {
-                Console.Write($"{arr[i]} ");
+                if (arr[i] < arr[i + 1])
+                {
+                    Console.Write($"{arr[i + 1]} ");
+                    value = arr[i + 1];
+                    break;
+                }
             }
+            for (int i = 0; i < arrCopy.Length; i++)
+            {
+                if (arrCopy[i] == value)
+                {
+                    Console.Write($"{i + 1}");
+                }
+                // Console.Write($"{arrCopy[i]} ");
+            }
+
         }
 
         static void Main(string[] args)
-
         {
             int n = Convert.ToInt16(Console.ReadLine());
             int[] myArr = InitByKeyBoard(Console.ReadLine());
+            int[] arrCopy = new int[myArr.Length];
+            Array.Copy(myArr, arrCopy, myArr.Length);
 
-            Created(CountOfDifferent(myArr));
-            // CountOfDifferent(myArr);
+            Created(CountOfDifferent(myArr), arrCopy);
+            // CreatedTwo(arrCopy);
         }
     }
 }
-

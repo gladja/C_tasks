@@ -38,23 +38,37 @@ namespace Hello
         static void Created(int[] arr, int[] arrCopy)
         {
             int value = 0;
+            int valueTwo = 0;
+            int count = 0;
             for (int i = 0; i < arr.Length; i++)
             {
-                if (arr[i] > arr[i + 1])
-                {
-                    Console.Write($"{arr[i + 1]} ");
-                    value = arr[i + 1];
-                    break;
-                }
+                // if (arr[i] > arr[i + 1])
+                // {
+                // Console.Write($"{arr[i + 1]} ");
+                value = arr[i];
+                // break;
+                // }
                 // Console.Write($"{arr[i]} ");
-            }
-            for (int i = 0; i < arrCopy.Length; i++)
-            {
-                if (arrCopy[i] == value)
+                for (int j = 0; j < arrCopy.Length; j++)
                 {
-                    Console.Write($"{i + 1}");
+
+                    if (arrCopy[j] == value)
+                    {
+                        // Console.Write($"{j + 1} ");
+                        count++;
+                        if (count < 2)
+                        {
+                            valueTwo = j + 1;
+                        }
+                        if (count > 1)
+                        {
+                            valueTwo = j + 1;
+                        }
+                    }
+                    // Console.Write($"{arrCopy[i]} ");
                 }
-                // Console.Write($"{arrCopy[i]} ");
+                count = 0;
+                Console.Write($"{valueTwo} ");
             }
 
         }

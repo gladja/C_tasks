@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "/Users/gladja/.nuget/packages/": {}
+    "/Users/user/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/gladja/Documents/C#/C_tasks/task-05/task-05.csproj",
+      "projectUniqueName": "/Users/user/Documents/C#/C_tasks/task-05/task-05.csproj",
       "projectName": "task-05",
-      "projectPath": "/Users/gladja/Documents/C#/C_tasks/task-05/task-05.csproj",
-      "packagesPath": "/Users/gladja/.nuget/packages/",
-      "outputPath": "/Users/gladja/Documents/C#/C_tasks/task-05/obj/",
+      "projectPath": "/Users/user/Documents/C#/C_tasks/task-05/task-05.csproj",
+      "packagesPath": "/Users/user/.nuget/packages/",
+      "outputPath": "/Users/user/Documents/C#/C_tasks/task-05/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/gladja/.nuget/NuGet/NuGet.Config"
+        "/Users/user/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"

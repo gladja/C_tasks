@@ -5,21 +5,13 @@ namespace Hello
     class Program
     {
 
-        static int[] InitByKeyBoard(int n)
+        static int[] InitByKeyBoard(string str)
         {
-            int[] arr = new int[n + n];
-            int count = 2;
-
-            for (int i = 1; i <= n; i++)
+            string[] date = str.Trim().Split();
+            int[] arr = new int[date.Length];
+            for (int i = 0; i < arr.Length; i++)
             {
-                arr[i] = (int)Math.Pow(i, 2);
-                // Console.WriteLine($"one {arr[i]}");
-            }
-            for (int i = n + 1; i < arr.Length; i++)
-            {
-                arr[i] = (int)Math.Pow(count, 3);
-                // Console.WriteLine($"two {arr[i]}");
-                count++;
+                arr[i] = Int32.Parse(date[i]);
             }
             return arr;
         }
@@ -31,7 +23,7 @@ namespace Hello
             {
                 for (int j = 0; j < arr.Length - i - 1; j++)
                 {
-                    if (arr[j + 1] < arr[j])
+                    if ((Math.Abs(arr[j + 1]) < Math.Abs(arr[j])) || (Math.Abs(arr[j]) == Math.Abs(arr[j + 1]) && (arr[j] > arr[j + 1])))
                     {
                         int t = arr[j + 1];
                         arr[j + 1] = arr[j];
@@ -42,35 +34,29 @@ namespace Hello
             return arr;
         }
 
-        static void Created(int[] arr, int n)
+        static void Created(int[] arr)
         {
-            for (int i = 0; i < arr.Length - 2; i++)
-            {
-                if (arr[i] == arr[i + 1])
-                {
-                    arr[i + 1] = arr[i + 2];
-                }
-            }
-            Array.Resize(ref arr, arr.Length - 1);
+            // for (int i = 0; i < arr.Length - 1; i++)
+            // {
+            //     if (Math.Abs(arr[i]) == Math.Abs(arr[i + 1]) && (arr[i] > arr[i + 1]))
+            //     {
+            //         int t = arr[i + 1];
+            //         arr[i + 1] = arr[i];
+            //         arr[i] = t;
+            //     }
+            // }
             for (int i = 0; i < arr.Length; i++)
             {
                 Console.Write($"{arr[i]} ");
-            }
-            if (n == 1)
-            {
-                Console.WriteLine($"1");
-            }
-            else
-            {
-                // Console.WriteLine($"{arr[n]} ");
             }
         }
 
         static void Main(string[] args)
         {
             int n = Convert.ToInt16(Console.ReadLine());
+            int[] myArr = InitByKeyBoard(Console.ReadLine());
 
-            Created(CountOfDifferent(InitByKeyBoard(n)), n);
+            Created(CountOfDifferent(myArr));
         }
     }
 }

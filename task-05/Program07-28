@@ -18,27 +18,28 @@ namespace Hello
 
         static int[] CountOfDifferent(int[] arr)
         {
+            int temp = 0;
+            int first = 0;
             int count = 0;
-            int one = arr[0];
 
             for (int i = 0; i < arr.Length - 1; i++)
             {
-                for (int j = 0; j < arr.Length - i - 1; j++)
+                // smallest = i;
+                for (int j = i + 1; j < arr.Length; j++)
                 {
                     // Console.WriteLine($"i:{arr[i]} j:{arr[j]}");
-                    if (arr[j + 1] < arr[j])
+                    if (arr[first] > arr[j])
                     {
-                        int t = arr[j + 1];
-                        arr[j + 1] = arr[j];
-                        arr[j] = t;
+                        first = j;
                         count++;
                     }
-                    // if (one > arr[i])
-                    // {
-                    //     one = arr[i];
-                    //     count++;
-                    //     Console.WriteLine(one);
-                    // }
+
+                    if (arr[i] > arr[j])
+                    {
+                        temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
                 }
             }
             Console.WriteLine($"{count}");

@@ -18,33 +18,41 @@ namespace Hello
 
         static int[] CountOfDifferent(int[] arr)
         {
+            int temp = 0;
+            int first = 0;
+            int count = 0;
 
             for (int i = 0; i < arr.Length - 1; i++)
             {
-                for (int j = 0; j < arr.Length - i - 1; j++)
+                // smallest = i;
+                for (int j = i + 1; j < arr.Length; j++)
                 {
-                    if ((Math.Abs(arr[j + 1]) < Math.Abs(arr[j])) || (Math.Abs(arr[j]) == Math.Abs(arr[j + 1]) && (arr[j] > arr[j + 1])))
+                    // Console.WriteLine($"i:{arr[i]} j:{arr[j]}");
+                    if (arr[first] > arr[j])
                     {
-                        int t = arr[j + 1];
-                        arr[j + 1] = arr[j];
-                        arr[j] = t;
+                        first = i;
+                        //     count++;
+                    }
+
+                    if (arr[i] > arr[j])
+                    {
+                        temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
                     }
                 }
+
+                if (arr[first] != i)
+                {
+                    count++;
+                }
             }
+            Console.WriteLine($"{count}");
             return arr;
         }
 
         static void Created(int[] arr)
         {
-            // for (int i = 0; i < arr.Length - 1; i++)
-            // {
-            //     if (Math.Abs(arr[i]) == Math.Abs(arr[i + 1]) && (arr[i] > arr[i + 1]))
-            //     {
-            //         int t = arr[i + 1];
-            //         arr[i + 1] = arr[i];
-            //         arr[i] = t;
-            //     }
-            // }
             for (int i = 0; i < arr.Length; i++)
             {
                 Console.Write($"{arr[i]} ");
@@ -52,11 +60,14 @@ namespace Hello
         }
 
         static void Main(string[] args)
+
         {
             int n = Convert.ToInt16(Console.ReadLine());
             int[] myArr = InitByKeyBoard(Console.ReadLine());
 
             Created(CountOfDifferent(myArr));
+            CountOfDifferent(myArr);
         }
     }
 }
+

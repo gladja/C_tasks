@@ -30,8 +30,8 @@ namespace Hello
                     // Console.WriteLine($"i:{arr[i]} j:{arr[j]}");
                     if (arr[first] > arr[j])
                     {
-                        first = i;
-                        //     count++;
+                        first = j;
+                        count++;
                     }
 
                     if (arr[i] > arr[j])
@@ -40,11 +40,6 @@ namespace Hello
                         arr[i] = arr[j];
                         arr[j] = temp;
                     }
-                }
-
-                if (arr[first] != i)
-                {
-                    count++;
                 }
             }
             Console.WriteLine($"{count}");
@@ -65,7 +60,7 @@ namespace Hello
             int n = Convert.ToInt16(Console.ReadLine());
             int[] myArr = InitByKeyBoard(Console.ReadLine());
 
-            Created(CountOfDifferent(myArr));
+            // Created(CountOfDifferent(myArr));
             CountOfDifferent(myArr);
         }
     }

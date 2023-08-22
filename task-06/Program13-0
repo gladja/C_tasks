@@ -2,53 +2,76 @@
 
 public class Test
 {
-
-    static string[] InitByKeyBoardLine(int n)
+    static int[,] InitByKeyBoardLine(int n, int m)
     {
-        string[] arr = new string[n];
+        int[,] arr = new int[n, m];
+        string[] str_arr;
         for (int i = 0; i < n; i++)
         {
-            arr[i] = Console.ReadLine();
+            str_arr = (Console.ReadLine()).Split(' ');
+            for (int j = 0; j < m; j++)
+            {
+                arr[i, j] = Convert.ToInt32(str_arr[j]);
+            }
         }
         return arr;
     }
 
-    static void ChangeRows(int[,] arr, int p, int q)
+    static void NewArr(int[,] arr, int p, int q, int n, int m)
     {
-        for (int j = 0; j < q; j++)
-        {
-            int temp = arr[p, j];
-            arr[p, j] = arr[q, j];
-            arr[q, j] = temp;
-        }
-    }
-    static void ChangeRowsLine(string[] arr, int p, int q)
-    {
-        string temp = arr[p];
-        arr[p] = arr[q];
-        arr[q] = temp;
-    }
-
-    static void PrintArr(string[] arr)
-    {
+        // if (p < q)
+        // {
         for (int i = 0; i < arr.GetLength(0); i++)
         {
-            Console.WriteLine($"{arr[i]} ");
+            Console.WriteLine("1");
+            for (int j = 0; j < 1; j++)
+            {
+                Console.WriteLine("2");
 
+                int temp = arr[i, p];
+                arr[i, p] = arr[i, q];
+                arr[i, q] = temp;
+            }
+        }
+        // }
+
+        if (p > q)
+        {
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < p - 1; j++)
+                {
+                    int temp = arr[i, j];
+                    arr[i, j] = arr[i, j + 1];
+                    arr[i, j + 1] = temp;
+                }
+            }
+        }
+
+        for (int i = 0; i < arr.GetLength(0); i++)
+        {
+            for (int j = 0; j < arr.GetLength(1); j++)
+            {
+                Console.Write($"{arr[i, j]} ");
+            }
+            Console.WriteLine();
         }
     }
-    static void Main(string[] args)
 
+
+    static void Main(string[] args)
     {
         string[] data = Console.ReadLine().Trim().Split();
         int n = int.Parse(data[0]);
         int m = int.Parse(data[1]);
-        string[] myArr = InitByKeyBoardLine(n);
-        string[] stringNum = Console.ReadLine().Trim().Split();
-        int p = int.Parse(stringNum[0]) - 1;
-        int q = int.Parse(stringNum[1]) - 1;
-        ChangeRowsLine(myArr, p, q);
-        PrintArr(myArr);
+
+        int[,] myArr = InitByKeyBoardLine(n, m);
+
+        string[] data2 = Console.ReadLine().Trim().Split();
+        int p = int.Parse(data2[0]) - 0;
+        int q = int.Parse(data2[1]) - 1;
+
+        NewArr(myArr, p, q, n, m);
     }
 
 }

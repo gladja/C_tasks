@@ -20,19 +20,23 @@ public class Test
 
     static void NewArr(int[,] arr, int n, int m)
     {
-
-        int max = 0;
         for (int i = 0; i < m; i++)
         {
+            int sum = 0;
+            int sum2 = 0;
             for (int j = 0; j < n; j++)
             {
-                if (max < arr[j, i])
+                if (arr[j, i] % 2 == 0)
                 {
-                    max = arr[j, i];
+                    sum += arr[j, i];
+                }
+                if (arr[j, i] % 2 != 0)
+                {
+                    sum2 += arr[j, i];
                 }
             }
-            Console.Write($"{max} ");
-            max = 0;
+            Console.Write($"{Math.Abs(sum - sum2)} ");
+
         }
     }
 

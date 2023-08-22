@@ -20,12 +20,11 @@ public class Test
 
     static void NewArr(int[,] arr, int n, int m)
     {
-
-        int sum = 0;
-        int sum2 = 0;
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < m; i++)
         {
-            for (int j = 0; j < m; j++)
+            int sum = 0;
+            int sum2 = 0;
+            for (int j = 0; j < n; j++)
             {
                 if (arr[j, i] % 2 == 0)
                 {
@@ -35,11 +34,9 @@ public class Test
                 {
                     sum2 += arr[j, i];
                 }
-
             }
             Console.Write($"{Math.Abs(sum - sum2)} ");
-            sum = 0;
-            sum2 = 0;
+
         }
     }
 

@@ -1,0 +1,74 @@
+﻿using System;
+
+public class Test
+{
+
+    static int[,] InitByKeyBoardLine(int n)
+    {
+        int[,] arr = new int[n, n];
+        int up = 0;    // Сужение сверху
+        int down = 0;  // Сужение снизу
+        int left = 0;  // Сужение слева
+        int right = 0; // Сужение справа
+
+        // Переменные счетчики используемые в расчетах
+        int k = 1; // Счетчик, который присваивает значение элемнетам массива
+        int i = 0; // Координары строки
+        int j = 0; // Координаты столбца
+
+        while (k <= n * n)
+        {
+            arr[i, j] = k;
+
+            // Проверка возможности движения вправо
+            if (i == up && j < n - right - 1)
+                ++j; // производится движение по столбцу вправо
+
+            // Проверка возможности движения вниз
+            else if (j == n - right - 1 && i < n - down - 1)
+                ++i; // производится движение по строкам вниз
+
+            // Проверка возможности движения влево
+            else if (i == n - down - 1 && j > left)
+                --j; // производится движение по столбцу влево
+
+            // Проверка возможности движения вверх
+            else
+                --i; // производится движение по строкам вверх
+
+            // Сужение диапазона, если окружность заполнена
+            if ((i == up + 1) && (j == left) && (left != n - right - 1))
+            {
+                ++up;
+                ++down;
+                ++right;
+                ++left;
+            }
+            ++k; // Счетчик увеличен на 1
+                 // Цикл начинается заново
+        }
+
+        return arr;
+    }
+
+    static void NewArr(int[,] arr)
+    {
+
+        for (int i = 0; i < arr.GetLength(0); i++)
+        {
+            for (int j = 0; j < arr.GetLength(1); j++)
+            {
+                Console.Write($"{arr[i, j]} ");
+            }
+            Console.WriteLine();
+        }
+    }
+
+    static void Main(string[] args)
+
+    {
+        int n = Convert.ToInt16(Console.ReadLine());
+        NewArr(InitByKeyBoardLine(n));
+    }
+}
+

@@ -6,33 +6,45 @@ public class Test
     static int[,] InitByKeyBoardLine(int n)
     {
         int[,] arr = new int[n, n];
-        // int m = n;
-        int count = 0;
+        int up = 0;
+        int down = 0;
+        int left = 0;
+        int right = 0;
 
-        for (int i = 0; i < n; i++)
+        int k = 1;
+        int i = 0;
+        int j = 0;
+
+        while (k <= n * n)
         {
-            for (int j = 0; j < n - 1; j++)
+            arr[i, j] = k;
+
+            if (i == up && j < n - right - 1)
             {
-                arr[i, j] = 0;
+                j++;
             }
-        }
-
-        for (int i = 0; i < n; i++)
-        {
-            for (int j = 0; j < n; j++)
+            else if (j == n - right - 1 && i < n - down - 1)
             {
-                if (!(i == 0 || i == n - 1 || j == 0 || j == n - 1))
-                {
-
-                }
-                continue;      // Временное условие для фильтрации элементов внесшего "кольца"
-                int a = i + 1;     // Номера строк и столбцов приводим в удобный
-                int b = j + 1;     // в математическом плане вид (от 1 до N)  
-                                   //  ... здесь будем вставлять основной код вычислений
+                i++;
             }
+            else if (i == n - down - 1 && j > left)
+            {
+                j--;
+            }
+            else
+            {
+                i--;
+            }
+
+            if ((i == up + 1) && (j == left) && (left != n - right - 1))
+            {
+                up++;
+                down++;
+                right++;
+                left++;
+            }
+            k++;
         }
-
-
         return arr;
     }
 
@@ -52,11 +64,7 @@ public class Test
     static void Main(string[] args)
 
     {
-        // string[] data = Console.ReadLine().Trim().Split();
-        // int n = int.Parse(data[0]);
-        // int m = int.Parse(data[1]);
         int n = Convert.ToInt16(Console.ReadLine());
-
         NewArr(InitByKeyBoardLine(n));
     }
 }

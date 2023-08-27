@@ -17,35 +17,13 @@ public class Test
         return arr;
     }
 
-    static void NewArr(int[,] arr, int p, int q, int n, int m)
+    static void NewArr(int[,] arr, int p, int q)
     {
-        // if (p < q)
-        // {
         for (int i = 0; i < arr.GetLength(0); i++)
         {
-            Console.WriteLine("1");
-            for (int j = 0; j < 1; j++)
-            {
-                Console.WriteLine("2");
-
-                int temp = arr[i, p];
-                arr[i, p] = arr[i, q];
-                arr[i, q] = temp;
-            }
-        }
-        // }
-
-        if (p > q)
-        {
-            for (int i = 0; i < arr.GetLength(0); i++)
-            {
-                for (int j = 0; j < p - 1; j++)
-                {
-                    int temp = arr[i, j];
-                    arr[i, j] = arr[i, j + 1];
-                    arr[i, j + 1] = temp;
-                }
-            }
+            int temp = arr[i, p - 1];
+            arr[i, p - 1] = arr[i, q - 1];
+            arr[i, q - 1] = temp;
         }
 
         for (int i = 0; i < arr.GetLength(0); i++)
@@ -68,10 +46,10 @@ public class Test
         int[,] myArr = InitByKeyBoardLine(n, m);
 
         string[] data2 = Console.ReadLine().Trim().Split();
-        int p = int.Parse(data2[0]) - 0;
-        int q = int.Parse(data2[1]) - 1;
+        int p = int.Parse(data2[0]);
+        int q = int.Parse(data2[1]);
 
-        NewArr(myArr, p, q, n, m);
+        NewArr(myArr, p, q);
     }
 
 }

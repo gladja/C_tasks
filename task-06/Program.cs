@@ -23,17 +23,25 @@ public class Test
         int[] arrSum = new int[n];
         for (int i = 0; i < n; i++)
         {
+            int res = 0;
             for (int j = 0; j < m; j++)
             {
-                arrSum[i] += arr[i, j];
+                string text = Math.Abs(arr[i, j]).ToString();
+                for (int k = 0; k < text.Length; k++)
+                {
+                    int b = int.Parse($"{text[k]}");
+                    res += b;
+                }
             }
+            arrSum[i] = res;
         }
+
 
         for (int i = 0; i < n; i++)
         {
             for (int j = 0; j < n; j++)
             {
-                if (Math.Abs(arrSum[i]) < Math.Abs(arrSum[j]))
+                if (arrSum[i] < arrSum[j])
                 {
                     int temp = arrSum[i];
                     arrSum[i] = arrSum[j];
@@ -62,7 +70,6 @@ public class Test
             }
             Console.WriteLine();
         }
-
     }
 
 

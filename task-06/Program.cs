@@ -20,13 +20,13 @@ public class Test
 
     static void SumArrRow(int[,] arr, int n, int m)
     {
-        int[] arrSum = new int[n];
-        for (int i = 0; i < n; i++)
+        int[] arrSum = new int[m];
+        for (int i = 0; i < m; i++)
         {
             int res = 0;
-            for (int j = 0; j < m; j++)
+            for (int j = 0; j < n; j++)
             {
-                string text = Math.Abs(arr[i, j]).ToString();
+                string text = Math.Abs(arr[j, i]).ToString();
                 for (int k = 0; k < text.Length; k++)
                 {
                     int b = int.Parse($"{text[k]}");
@@ -37,9 +37,9 @@ public class Test
         }
 
 
-        for (int i = 0; i < n - 1; i++)
+        for (int i = 0; i < arrSum.Length - 1; i++)
         {
-            for (int j = 0; j < n - i - 1; j++)
+            for (int j = 0; j < arrSum.Length - i - 1; j++)
             {
                 if (arrSum[j + 1] < arrSum[j])
                 {
@@ -47,7 +47,7 @@ public class Test
                     arrSum[j + 1] = arrSum[j];
                     arrSum[j] = temp;
 
-                    for (int k = 0; k < m; k++)
+                    for (int k = 0; k < arrSum.Length; k++)
                     {
                         int temp2 = arr[j + 1, k];
                         arr[j + 1, k] = arr[j, k];
@@ -57,10 +57,10 @@ public class Test
             }
         }
 
-        // for (int i = 0; i < arrSum.Length; i++)
-        // {
-        //     Console.WriteLine(arrSum[i]);
-        // }
+        for (int i = 0; i < arrSum.Length; i++)
+        {
+            Console.WriteLine(arrSum[i]);
+        }
 
         for (int i = 0; i < arr.GetLength(0); i++)
         {

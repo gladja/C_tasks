@@ -38,20 +38,26 @@ public class Test
 
         for (int i = 0; i < arrSum.Length - 1; i++)
         {
-            for (int j = 0; j < arrSum.Length - i - 1; j++)
+            for (int j = i + 1; j < arrSum.Length; j++)
             {
-                if (Math.Abs(arrSum[j + 1]) >= Math.Abs(arrSum[j]))
+                if (Math.Abs(arrSum[j]) > Math.Abs(arrSum[i]))
                 {
-                    int t = arrSum[j + 1];
-                    arrSum[j + 1] = arrSum[j];
-                    arrSum[j] = t;
+                    int t = arrSum[j];
+                    arrSum[j] = arrSum[i];
+                    arrSum[i] = t;
+                }
+                else if (Math.Abs(arrSum[j]) == Math.Abs(arrSum[i]) && arrSum[j] > arrSum[i])
+                {
+                    int t = arrSum[j];
+                    arrSum[j] = arrSum[i];
+                    arrSum[i] = t;
                 }
             }
         }
 
         for (int i = 0; i < arrSum.Length; i++)
         {
-            Console.WriteLine(arrSum[i]);
+            Console.Write($"{arrSum[i]} ");
         }
 
     }

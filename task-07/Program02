@@ -3,29 +3,38 @@
 public class Test
 {
 
-    static void Result(int n, string data)
+    static void Result(string data)
     {
-        int count = 0;
-        int sum = 0;
-
+        string row = "";
         for (int i = 0; i < data.Length; i++)
         {
-            if ((byte)data[i] >= 48 && (byte)data[i] <= 57)
+            if (data[i] == ',' ||
+            data[i] == ' ' ||
+            data[i] == '.' ||
+            data[i] == '!' ||
+            data[i] == '?' ||
+            data[i] == ';' ||
+            data[i] == ':')
             {
-                count++;
-                sum += (data[i] - 48);
+                row += data[i];
+                continue;
+            }
+            else
+            {
+                row += data[i];
+                row += data[i];
             }
         }
-        Console.Write($"{count}\n{sum}");
+        Console.Write($"{row} ");
     }
+
 
     static void Main(string[] args)
 
     {
-        int n = Convert.ToInt16(Console.ReadLine());
         string data = Console.ReadLine();
 
-        Result(n, data);
+        Result(data);
     }
 
 }

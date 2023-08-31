@@ -1,0 +1,58 @@
+﻿using System;
+
+public class Test
+{
+
+    static void Result(string data)
+    {
+        int num = 0;
+        string str = "";
+        for (int i = 0; i < data.Length; i++)
+        {
+            if ((byte)data[i] >= 48 && (byte)data[i] <= 57)
+            {
+                num++;
+            }
+            else
+            {
+                str += data[i];
+            }
+
+        }
+        Console.WriteLine($"{num}");
+        Console.WriteLine($"{str}");
+
+        string newStr = "";
+        for (int i = 0; i < data.Length; i++)
+        {
+            if ((byte)data[i] >= 48 && (byte)data[i] <= 57)
+            {
+                newStr += data[i];
+            }
+            else
+            {
+                newStr += " ";
+            }
+        }
+        Console.WriteLine($"{newStr}");
+
+        // char[] c = newStr.ToCharArray();
+        // string[] c = newStr.Replace(" ", "");
+        // Console.WriteLine($"{с}");
+        for (int i = 0; i < c.Length; i++)
+        {
+            Console.Write($"{c[i]} ");
+        }
+
+    }
+
+
+    static void Main(string[] args)
+
+    {
+        string data = Console.ReadLine();
+
+        Result(data);
+    }
+
+}

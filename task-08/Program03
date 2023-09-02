@@ -1,0 +1,36 @@
+﻿using System;
+using System.Data;
+
+public class ArithmeticExpression
+{
+    public static double CalculateExpression(string expression)
+    {
+        try
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("expression", typeof(string), expression);
+            DataRow row = dt.NewRow();
+            dt.Rows.Add(row);
+            return double.Parse((string)row["expression"]);
+        }
+        catch (Exception ex)
+        {
+            throw new ArgumentException("Invalid expression: " + ex.Message);
+        }
+    }
+
+    public static void Main(string[] args)
+    {
+        try
+        {
+            string expression = Console.ReadLine().Trim().Replace(" ", "");
+            double result = CalculateExpression(expression);
+            Console.WriteLine("Expression: " + expression);
+            Console.WriteLine("Result: " + result);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error: " + ex.Message);
+        }
+    }
+}

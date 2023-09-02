@@ -1,0 +1,184 @@
+﻿// Задана строка, содержащая арифметическое выражение, состоящее из целых
+// чисел и знаков операций (бинарных): +, -, *, / (без скобок). Проверить корректность
+// выражения (последовательность чисел и знаков операций). В случае корректности вычислить
+// значение с учетом приоритетов операций.
+
+// using System;
+
+// public class Test
+// {
+
+//     static void Result(string data)
+//     {
+//         int next;
+//         int prev;
+//         char lit;
+
+//         for (int i = 0; i < data.Length; i++)
+//         {
+//             next = (byte)data[i] + 1;
+//             lit = (char)next;
+//             Console.WriteLine($"The next char for '{data[i]}' ({(byte)data[i]}) is '{lit}' ({next}).");
+
+//             prev = (byte)data[i] - 1;
+//             lit = (char)prev;
+//             Console.WriteLine($"The previous char for '{data[i]}' ({(byte)data[i]}) is '{lit}' ({prev}).");
+
+//         }
+//     }
+
+
+//     static void Main(string[] args)
+
+//     {
+//         string data = Console.ReadLine();
+
+//         Result(data);
+//     }
+
+// }
+
+
+using System;
+using System.Collections.Generic;
+
+public class ArithmeticExpression
+{
+    public static bool IsOperator(char ch)
+    {
+        return ch == '+' || ch == '-' || ch == '*' || ch == '/';
+    }
+
+    public static int GetPriority(char op)
+    {
+        switch (op)
+        {
+            case '+':
+            case '-':
+                return 1;
+            case '*':
+            case '/':
+                return 2;
+            default:
+                return 0;
+        }
+    }
+
+    public static double CalculateExpression(string expression)
+    {
+        Stack<double> values = new Stack<double>();
+        Stack<char> operators = new Stack<char>();
+
+        for (int i = 0; i < expression.Length; i++)
+        {
+            char ch = expression[i];
+            if (char.IsDigit(ch))
+            {
+                string num = "";
+                while (i < expression.Length && (char.IsDigit(expression[i]) || expression[i] == '.'))
+                {
+                    num += expression[i];
+                    i++;
+                }
+                i--;
+
+                if (!double.TryParse(num, out double value))
+                {
+                    throw new ArgumentException("Invalid number format in the expression.");
+                }
+
+                values.Push(value);
+            }
+            else if (ch == '(')
+            {
+                operators.Push(ch);
+            }
+            else if (ch == ')')
+            {
+                while (operators.Count > 0 && operators.Peek() != '(')
+                {
+                    double b = values.Pop();
+                    double a = values.Pop();
+                    char op = operators.Pop();
+                    values.Push(ApplyOperator(a, b, op));
+                }
+
+                if (operators.Count > 0 && operators.Peek() == '(')
+                {
+                    operators.Pop();
+                }
+                else
+                {
+                    throw new ArgumentException("Mismatched parentheses in the expression.");
+                }
+            }
+            else if (IsOperator(ch))
+            {
+                while (operators.Count > 0 && GetPriority(ch) <= GetPriority(operators.Peek()))
+                {
+                    double b = values.Pop();
+                    double a = values.Pop();
+                    char op = operators.Pop();
+                    values.Push(ApplyOperator(a, b, op));
+                }
+
+                operators.Push(ch);
+            }
+            else
+            {
+                throw new ArgumentException("Invalid character in the expression: " + ch);
+            }
+        }
+
+        while (operators.Count > 0)
+        {
+            double b = values.Pop();
+            double a = values.Pop();
+            char op = operators.Pop();
+            values.Push(ApplyOperator(a, b, op));
+        }
+
+        if (values.Count != 1)
+        {
+            throw new ArgumentException("Invalid expression.");
+        }
+
+        return values.Pop();
+    }
+
+    public static double ApplyOperator(double a, double b, char op)
+    {
+        switch (op)
+        {
+            case '+':
+                return a + b;
+            case '-':
+                return a - b;
+            case '*':
+                return a * b;
+            case '/':
+                if (b == 0)
+                {
+                    throw new DivideByZeroException("Division by zero is not allowed.");
+                }
+                return a / b;
+            default:
+                throw new ArgumentException("Invalid operator: " + op);
+        }
+    }
+
+    public static void Main(string[] args)
+    {
+        // try
+        // {
+        string expression = "3 + 4 * (2 - 1)";
+        double result = CalculateExpression(expression);
+        Console.WriteLine("Expression: " + expression);
+        Console.WriteLine("Result: " + result);
+        // }
+        // catch (Exception ex)
+        // {
+        // Console.WriteLine("Error: " + ex.Message);
+        // }
+    }
+}

@@ -6,20 +6,39 @@
 using System;
 using System.Text;
 using System.Collections.Generic;
+using System.Linq;
 
 public class Test
 {
+    static int SymblPriority(char s)
+    {
+        switch (s)
+        {
+            case '+':
+            case '-':
+                return 1;
+            case '*':
+            case '/':
+                return 2;
+            case '#':
+                return -1;
+            default:
+                return 0;
+        }
+    }
 
     static void Result(string data)
     {
         StringBuilder text = new StringBuilder(data);
-        List<double> list = new List<double>();
-        Stack<double> val = new Stack<double>();
+        List<double> listNum = new List<double>();
+        List<double> listSym = new List<double>();
+        // Stack<double> listSym = new Stack<double>();
 
 
         for (int i = 0; i < text.Length; i++)
         {
             // char ch = text[i];
+            listSym.Add('#');
             if (char.IsDigit(text[i]))
             {
                 double num = 0;
@@ -32,17 +51,23 @@ public class Test
                 }
                 i--;
                 Console.WriteLine($"{num} ");
-                list.Add(num);
+                listNum.Add(num);
             }
             else
             {
-                if (text[i] == '-' || text[i] == '+' || text[i] == '*' || text[i] == '/')
+                if (text[i] == '+' || text[i] == '-')
                 {
-                    // Console.Write($"{i}");
+                    // listSym.Add(ch);
+                    if (SymblPriority((char)listSym.Last()) >= SymblPriority(text[i]))
+                    {
+
+                        Console.WriteLine("yes");
+                    }
+                    // int sum = SymblPriority((listSym.Last()));
+                    Console.WriteLine((char)listSym.Last());
                 }
-                else
+                else if (text[i] == '*' || text[i] == '/')
                 {
-                    Console.WriteLine("error");
 
                 }
             }

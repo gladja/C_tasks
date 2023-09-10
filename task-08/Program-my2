@@ -16,38 +16,37 @@ public class Test
         List<double> list = new List<double>();
         Stack<double> val = new Stack<double>();
 
-
+        // string[] ar = data.Trim().Split().Replace("-", " ").Replace("+", " ").Replace("*", " ").Replace("/", " ");
+        // int[] arr = new int[ar.Length];
+        // for (int i = 0; i < arr.Length; i++)
+        // {
+        //     arr[i] = Int32.Parse(ar[i]);
+        // }
+        // int b = 0;
+        // string result = "";
         for (int i = 0; i < text.Length; i++)
         {
-            // char ch = text[i];
-            if (char.IsDigit(text[i]))
+            if (text[i] == '+' || text[i] == '-' || text[i] == '*' || text[i] == '/')
             {
-                double num = 0;
-                // while (text[i] >= '0' && text[i] <= '9')
-                while (i < text.Length && char.IsDigit(text[i]))
-                {
-                    num *= 10;
-                    num += (text[i] - 48);
-                    i++;
-                }
-                i--;
-                Console.WriteLine($"{num} ");
-                list.Add(num);
+                text.Remove(i, 1).Insert(i, " ");
             }
-            else
-            {
-                if (text[i] == '-' || text[i] == '+' || text[i] == '*' || text[i] == '/')
-                {
-                    // Console.Write($"{i}");
-                }
-                else
-                {
-                    Console.WriteLine("error");
-
-                }
-            }
-
         }
+        string[] arr = text.Trim().Split()
+        int[] arr = new int[ar.Length];
+        // Console.WriteLine((char)a);
+        // Console.WriteLine((char)a);
+        Console.WriteLine(text);
+        // Console.WriteLine(list);
+        // foreach (var va in val)
+        // {
+        //     Console.WriteLine(va);
+        // }
+
+        // for (int i = 0; i < arr.Length; i++)
+        // {
+        //     Console.Write($"{arr[i]} ");
+        // }
+
     }
 
 
@@ -56,10 +55,10 @@ public class Test
     {
         // string example = Console.ReadLine().Trim().Replace(" ", "");
         string example = Console.ReadLine().Trim().Replace(" ", "");
-        // string example = "33+2";
 
         Result(example);
     }
 
 }
+
 

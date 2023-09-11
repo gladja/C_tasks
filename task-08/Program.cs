@@ -6,7 +6,6 @@
 using System;
 using System.Text;
 using System.Collections.Generic;
-using System.Linq;
 
 public class Test
 {
@@ -39,8 +38,7 @@ public class Test
             case '/':
                 if (b == 0)
                 {
-                    Console.WriteLine($"Error1");
-                    // break;
+                    Console.WriteLine("Error");
                 }
                 return a / b;
             default:
@@ -51,8 +49,6 @@ public class Test
     static void Result(string data)
     {
         StringBuilder text = new StringBuilder(data);
-        // List<double> listNum = new List<double>();
-        // List<double> listSym = new List<double>();
         Stack<double> listNum = new Stack<double>();
         Stack<char> symbol = new Stack<char>();
         int minus = 0;
@@ -66,13 +62,12 @@ public class Test
 
         for (int i = 0; i < text.Length; i++)
         {
-            // char ch = text[i];
-            // symbol.Push('#');
-            if (char.IsDigit(text[i]))
+            // if (char.IsDigit(text[i]))
+            if (text[i] >= '0' && text[i] <= '9')
             {
                 double num = 0;
                 // while (text[i] >= '0' && text[i] <= '9')
-                while (i < text.Length && char.IsDigit(text[i]))
+                while (i < text.Length && text[i] >= '0' && text[i] <= '9')
                 {
                     num *= 10;
                     num += (text[i] - 48);
@@ -84,42 +79,22 @@ public class Test
                 {
                     num *= -1;
                 }
-
-                Console.WriteLine($"{num} ");
+                // Console.WriteLine($"{num} ");
                 listNum.Push(num);
                 minus = 1;
             }
             else if (text[i] == '+' || text[i] == '-' || text[i] == '*' || text[i] == '/')
             {
-                // if (text[i] == '+' || text[i] == '-' || text[i] == '*' || text[i] == '/')
-                // {
-                // if (SymblPriority(symbol.Peek()) >= SymblPriority(text[i]))
-                // {
+
                 while (symbol.Count > 0 && SymblPriority(symbol.Peek()) >= SymblPriority(text[i]))
                 {
                     double b = listNum.Pop();
                     double a = listNum.Pop();
                     char s = symbol.Pop();
                     listNum.Push(Calculate(a, b, s));
-                    // Calculate(a, b, s);
-                    Console.WriteLine($"{a}");
                 }
                 symbol.Push(text[i]);
-                // }
-                // else
-                // {
-                //     symbol.Push(text[i]);
-                // }
-                // int sum = SymblPriority((listSym.Last()));
-                // Console.WriteLine("yes");
-                // Console.WriteLine(listSym.Last());
-                // }
-                // else if (text[i] == '*' || text[i] == '/')
-                // {
-
-                // }
             }
-
         }
 
         while (symbol.Count > 0)
@@ -128,8 +103,7 @@ public class Test
             double a = listNum.Pop();
             char s = symbol.Pop();
             listNum.Push(Calculate(a, b, s));
-            // Calculate(a, b, s);
-            Console.WriteLine($"{a} {b} {s}");
+            // Console.WriteLine($"{a} {b} {s}");
         }
 
         if (listNum.Count != 1)
@@ -137,18 +111,22 @@ public class Test
             throw new ArgumentException("Invalid expression.");
         }
         Console.WriteLine($"{listNum.Peek()}");
-        // return listNum.Pop();
     }
 
 
     static void Main(string[] args)
 
     {
-        // string example = Console.ReadLine().Trim().Replace(" ", "");
-        string example = Console.ReadLine().Trim().Replace(" ", "");
-        // string example = "33+2";
-
-        Result(example);
+        try
+        {
+            string example = Console.ReadLine().Trim();
+            // .Replace(" ", "");
+            Result(example);
+        }
+        catch
+        {
+            Console.WriteLine("Not correct example");
+        }
     }
 
 }
